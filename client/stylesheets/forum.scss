@@ -1,0 +1,43 @@
+@import "typography";
+@import "variables";
+@import "components/grid/grid";
+
+#forum {
+  @include flex(column, center, center);
+  flex: 1;
+  .forum {
+    @extend .container;
+    @include flex(column, none,none);
+    margin: 8px 0;
+    flex: 1;
+    overflow: hidden;
+    paper-menu {
+      padding: 0;
+    }
+    header {
+      padding: 8px 0;
+      z-index: 500;
+      background-color: #ffffff;
+      @include flex(row, none, none);
+      .chevron {
+        i {
+          transition: .5s all;
+          width: 48px;
+          text-align: center;
+          height: 48px;
+          line-height: 48px;
+          font-size: 20px;
+          @extend .paper-color-text;
+        }
+        margin: 0 16px;
+        cursor: pointer;
+        position: relative;
+        &.closed {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

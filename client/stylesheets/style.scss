@@ -1,0 +1,51 @@
+@import "variables";
+@import "typography";
+@import "components/grid/grid";
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html, body {
+  min-height: 100vh;
+  @extend .paper-font-body1;
+  background-color: #fafafa;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover, &:active, &:visited {
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0,0,0,.12);
+}
+
+paper-ripple {
+  color: $primary-color-500;
+}
+
+paper-item:focus {
+  outline: none;
+}
+
+#content > div {
+  @include flex(column, none,none);
+  margin: 16px 0 0 0;
+}

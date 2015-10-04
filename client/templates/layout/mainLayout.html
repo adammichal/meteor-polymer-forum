@@ -1,0 +1,17 @@
+<template name="mainLayout">
+	<paper-drawer-panel>
+		<paper-header-panel drawer id="sideBar">
+			{{> sideBar}}
+		</paper-header-panel>
+		<paper-header-panel main id="main">
+			<paper-toolbar>
+				{{> navbar}}
+			</paper-toolbar>
+			<div id="content">
+				{{#transition in="fadeInDown:500" out="fadeOutUp:500" wrap="true"}}
+					{{> yield}}
+				{{/transition}}
+			</div>
+		</paper-header-panel>
+	</paper-drawer-panel>
+</template>

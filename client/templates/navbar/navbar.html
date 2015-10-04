@@ -1,0 +1,13 @@
+<template name="navbar">
+	<div class="header">
+		{{#transition in="fadeIn:500" out="fadeOut:500"}}
+		<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+		{{/transition}}
+
+		{{{breadcrumb}}}
+
+	</div>
+	{{> loginButtons}}
+	<div class="actions">
+	</div>
+</template>

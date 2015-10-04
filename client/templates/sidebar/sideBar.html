@@ -1,0 +1,57 @@
+<template name="sideBar">
+	<paper-toolbar>
+		<div>
+			<a href="{{pathFor 'forum'}}">
+			{{forumConfig.sideBar.title}}
+			</a>
+		</div>
+	</paper-toolbar>
+	<div class="content">
+		<paper-menu>
+			<paper-item class="subheader" disabled>Forums</paper-item>
+			{{#each forum}}
+				<paper-submenu>
+					<paper-item class="menu-trigger" data-route="forum">
+						<i class="mdi mdi-{{icon}}"></i>{{name}}
+						<paper-ripple></paper-ripple>
+					</paper-item>
+					<paper-menu class="menu-content sublist">
+						{{#each subForum}}
+							<paper-item data-route="subForum">
+								<a>
+									<i class="mdi mdi-{{icon}}"></i>{{name}}
+								</a>
+								<paper-ripple></paper-ripple>
+							</paper-item>
+						{{/each}}
+					</paper-menu>
+				</paper-submenu>
+			{{/each}}
+
+
+			{{#transition in="fadeInDown:500" out="fadeOutUp:500"}}
+			<div class="divider"></div>
+			{{#if currentUser}}
+				<paper-item data-route="settings">
+					<i class="mdi mdi-settings"></i>Settings
+					<paper-ripple></paper-ripple>
+				</paper-item>
+
+				<paper-item data-action="logout">
+					<i class="mdi mdi-exit-to-app"></i>Log out
+					<paper-ripple></paper-ripple>
+				</paper-item>
+
+				<paper-item data-route="help">
+					<i class="mdi mdi-help-circle"></i>Help & Feedback
+					<paper-ripple></paper-ripple>
+				</paper-item>
+			{{else}}
+				<div class="no-user">
+					Please log in
+				</div>
+			{{/if}}
+			{{/transition}}
+		</paper-menu>
+	</div>
+</template>

@@ -1,0 +1,21 @@
+@import "variables";
+@import "components/grid/grid";
+@import "typography";
+
+#main {
+  paper-toolbar {
+    background-color: $primary-color-500;
+    @include flex(row, space-between,center);
+    @extend .paper-font-title;
+    padding: 0 16px;
+    .header {
+      flex: 1;
+      i {
+        &.mdi.mdi-chevron-right {
+          margin: 0 8px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

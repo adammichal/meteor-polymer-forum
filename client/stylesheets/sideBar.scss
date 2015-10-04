@@ -1,0 +1,53 @@
+@import "variables";
+@import "typography";
+@import "components/grid/grid";
+
+#sideBar {
+  paper-toolbar {
+    padding: 0 16px;
+    @extend .paper-font-title;
+  }
+  .content {
+    .divider {
+      margin: 8px 0;
+    }
+    .subheader {
+      @extend .paper-font-subhead;
+    }
+    padding: 16px 0 0 0;
+    .no-user {
+      @extend .paper-font-body2;
+      text-align: center;
+    }
+    paper-menu {
+      padding: 0;
+      paper-item {
+        cursor: pointer;
+        position: relative;
+        @extend .paper-font-body2;
+        @include flex(row, none, none);
+        a {
+          flex: 1;
+        }
+        &.iron-selected {
+          color: $primary-color-500;
+          i {
+            color: $primary-color-500;
+          }
+        }
+      }
+      i {
+        font-size: 20px;
+        @extend .paper-color-secondary;
+        width: 56px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .sublist {
+        paper-item {
+          padding: 0 16px 0 32px;
+        }
+      }
+    }
+  }
+}

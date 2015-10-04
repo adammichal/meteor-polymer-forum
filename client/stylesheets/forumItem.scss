@@ -1,0 +1,23 @@
+@import "variables";
+@import "typography";
+@import "components/grid/grid";
+
+.forumItem {
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+  @include flex(row, none, none);
+  i, div {
+    height: 48px;
+    line-height: 48px;
+  }
+  i {
+    font-size: 20px;
+    @extend .paper-color-text;
+    width: 56px;
+  }
+  div {
+    @extend .paper-font-headline;
+    flex: 1;
+  }
+}
