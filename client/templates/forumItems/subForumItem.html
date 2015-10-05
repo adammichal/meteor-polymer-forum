@@ -1,0 +1,14 @@
+<template name="subForumItem">
+	<paper-item class="subForumItem">
+		<header>
+			<i class="mdi mdi-{{subForum.icon}}"></i>
+			<div class="body">
+				<div>{{subForum.name}}</div>
+				<div secondary>{{subForum.description}}</div>
+			</div>
+			{{#unless paperRipple}}
+				<paper-ripple></paper-ripple>
+			{{/unless}}
+		</header>
+	</paper-item>
+</template>

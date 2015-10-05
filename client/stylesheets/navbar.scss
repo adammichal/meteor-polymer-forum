@@ -4,16 +4,87 @@
 
 #main {
   paper-toolbar {
-    background-color: $primary-color-500;
-    @include flex(row, space-between,center);
+    @include flex(row, none,none);
     @extend .paper-font-title;
-    padding: 0 16px;
-    .header {
+    background-color: $primary-color-500;
+    transition: .5s all;
+    width: 100%;
+
+    paper-ripple {
+      color: $primary-color-100;
+    }
+
+    .top, .middle {
+      position: relative;
+      box-sizing: border-box;
+      line-height: 48px;
+      height: 48px;
+      width: 100%;
+    }
+
+    i {
+      height: 32px;
+      min-width: 32px !important;
+      padding: 8px;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    .middle {
+      @include flex(row, space-between, none);
+      [paper-drawer-toggle] {
+        &::shadow #ripple {
+          color: $primary-color-100;
+        }
+        line-height: 32px;
+        width: 32px;
+        text-align: center;
+      }
+    }
+
+    > * {
+      width: 100%;
+      transition: .5s all;
+    }
+
+    &.search-active {
+      background-color: #ffffff;
+      .middle {
+        display: none;
+      }
+      .bottom#search {
+        display: flex;
+        opacity: 1;
+      }
+    }
+
+    .bottom#search {
+      @include flex(row, none,center);
+      @extend .paper-font-title;
+      display: none;
+      height: 48px;
+      opacity: 0;
+      transition: .5s all;
       flex: 1;
+      width: 100% !important;
       i {
-        &.mdi.mdi-chevron-right {
-          margin: 0 8px;
-          font-size: 20px;
+        color: $paper-color-secondary;
+        paper-ripple {
+          color: $primary-color-500;
+        }
+      }
+      input {
+        @extend .paper-font-title;
+        color: $paper-color-text;
+        line-height: 48px;
+        background-color: transparent;
+        border: none;
+        flex: 1;
+        &:focus {
+          outline: none;
         }
       }
     }

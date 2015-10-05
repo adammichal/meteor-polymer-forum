@@ -1,6 +1,6 @@
 <template name="mainLayout">
 	<paper-drawer-panel>
-		<paper-header-panel drawer id="sideBar">
+		<paper-header-panel drawer id="sideBar" mode="{{#if currentUser}}seamed{{else}}standard{{/if}}">
 			{{> sideBar}}
 		</paper-header-panel>
 		<paper-header-panel main id="main">

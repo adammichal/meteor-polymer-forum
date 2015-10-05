@@ -1,13 +1,20 @@
 <template name="navbar">
-	<div class="header">
-		{{#transition in="fadeIn:500" out="fadeOut:500"}}
-		<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-		{{/transition}}
-
-		{{{breadcrumb}}}
-
+	<div class="middle">
+		<paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+		{{> loginButtons}}
+		<div class="actions">
+			<i class="mdi mdi-magnify" data-action="toggleSearch">
+				<paper-ripple class="circle" center></paper-ripple>
+			</i>
+			<i class="mdi mdi-dots-vertical">
+				<paper-ripple class="circle" center></paper-ripple>
+			</i>
+		</div>
 	</div>
-	{{> loginButtons}}
-	<div class="actions">
+
+	<div class="bottom" id="search">
+		<i class="mdi mdi-arrow-left" data-action="toggleSearch"></i>
+		<input placeholder="Search">
 	</div>
+
 </template>

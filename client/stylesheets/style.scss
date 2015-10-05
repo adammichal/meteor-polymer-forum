@@ -41,11 +41,12 @@ paper-ripple {
   color: $primary-color-500;
 }
 
-paper-item:focus {
+paper-item[focused], paper-item[pressed] paper-item:focus, paper-item:focus:after {
   outline: none;
+  background-color: #ffffff;
 }
 
 #content > div {
   @include flex(column, none,none);
-  margin: 16px 0 0 0;
+  margin: 16px;
 }

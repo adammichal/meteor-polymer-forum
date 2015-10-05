@@ -1,27 +1,13 @@
 <template name="forum">
-	<main id="forum">
+	<section id="forum">
+		<div>
+			{{> forumItem _id=_id paperRipple='true'}}
+		</div>
 
-			{{#each forums}}
-				<paper-material elevation="1" class="forum" data-forumId="{{_id}}">
-					<paper-menu>
-						<paper-submenu>
-							<header class="menu-trigger">
-								{{> forumItem _id=_id}}
-								<div class="chevron closed">
-									<i class="mdi mdi-chevron-up"></i>
-									<paper-ripple class="circle" center></paper-ripple>
-								</div>
-							</header>
-							<paper-menu class="subForums menu-content sublist">
-								{{#each subForum}}
-									{{> subForumItem _id=_id}}
-								{{/each}}
-							</paper-menu>
-						</paper-submenu>
-					</paper-menu>
-				</paper-material>
-			{{/each}}
-
-
-	</main>
+		{{#each subForum}}
+			<paper-card>
+				{{> subForumItem _id=_id}}
+			</paper-card>
+		{{/each}}
+	</section>
 </template>

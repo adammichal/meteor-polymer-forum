@@ -1,10 +1,8 @@
 Template.sideBar.helpers({
 	forum: function () {
-		console.log(Forums.find({}));
 		return Forums.find({})
 	},
 	subForum: function () {
-		console.log(subForums.find({forumId: this._id}));
 		return subForums.find({forumId: this._id})
 	}
 });

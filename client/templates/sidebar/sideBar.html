@@ -1,11 +1,19 @@
 <template name="sideBar">
-	<paper-toolbar>
-		<div>
-			<a href="{{pathFor 'forum'}}">
-			{{forumConfig.sideBar.title}}
-			</a>
+	{{#if currentUser}}
+	<paper-toolbar class="user">
+		<div class="top">
+			<img class="avatar" src="{{currentUser.services.github.avatar}}">
+		</div>
+		<div class="bottom">
+			<div class="username">{{currentUser.services.github.name}}</div>
+			<div class="email">{{currentUser.services.github.email}}</div>
 		</div>
 	</paper-toolbar>
+	{{else}}
+	<paper-toolbar>
+		<a href="{{forumConfig.sideBar.link}}">{{forumConfig.sideBar.title}}</a>
+	</paper-toolbar>
+	{{/if}}
 	<div class="content">
 		<paper-menu>
 			<paper-item class="subheader" disabled>Forums</paper-item>

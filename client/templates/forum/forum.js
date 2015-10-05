@@ -1,17 +1,22 @@
 Template.forum.helpers({
-	forums: function () {
-		return Forums.find({});
-	},
 	subForum: function () {
-		return subForums.find({forumId: this._id})
+		return subForums.find({forumId: this._id});
 	}
 });
 
 Template.forum.events({
-	'click header': function () {
-		var forumId = this._id;
+	//add your events here
+});
 
-		$('[data-forumId="' +forumId+'"] .chevron').toggleClass('closed');
-	}
+Template.forum.onCreated(function () {
+	//add your statement here
+});
+
+Template.forum.onRendered(function () {
+	//add your statement here
+});
+
+Template.forum.onDestroyed(function () {
+	//add your statement here
 });
 

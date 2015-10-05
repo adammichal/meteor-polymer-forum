@@ -3,26 +3,36 @@
 @import "components/grid/grid";
 
 .subForumItem {
-  @include flex(row, none,none);
+  @include flex(column, none,none);
   position: relative;
   z-index: 1;
   height: 48px;
   flex: 1;
   padding: 8px 16px;
-  border-top: solid 1px $paper-color-divider;
   cursor: pointer;
-  i {
-    line-height: 48px;
-    height: 48px;
-    width: 32px;
-    font-size: 20px;
-    @extend .paper-color-secondary;
-  }
-  div {
-    @extend .paper-font-title;
-    line-height: 24px;
-    &[secondary] {
-      @extend .paper-font-subhead;
+  header {
+    @include flex(row, none,none);
+    position: relative;
+    min-height: 48px;
+    width: 100%;
+    i {
+      line-height: 48px;
+      height: 48px;
+      width: 32px;
+      font-size: 20px;
+      @extend .paper-color-secondary;
+    }
+    div.body {
+      flex: 1;
+      @include flex(column, none,none);
+      div {
+        flex: 1;
+        @extend .paper-font-title;
+        line-height: 24px;
+        &[secondary] {
+          @extend .paper-font-subhead;
+        }
+      }
     }
   }
 }

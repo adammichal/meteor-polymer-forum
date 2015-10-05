@@ -1,0 +1,11 @@
+<template name="forumItem">
+	<paper-item class="forumItem">
+		<div class="title">
+			<i class="mdi mdi-{{forum.icon}}"></i>
+			{{forum.name}}
+			{{#unless paperRipple}}
+				<paper-ripple></paper-ripple>
+			{{/unless}}
+		</div>
+	</paper-item>
+</template>
