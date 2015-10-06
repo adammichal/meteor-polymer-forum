@@ -1,0 +1,17 @@
+@import "typography";
+@import "variables";
+@import "components/grid/grid";
+
+.loginLayout {
+  div {
+    position: relative;
+    cursor: pointer;
+    @include flex(row, center, none);
+    .prefix {
+      padding: 8px;
+      line-height: 32px;
+      height: 32px;
+      @extend .paper-font-title;
+    }
+  }
+}

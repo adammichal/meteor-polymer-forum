@@ -1,0 +1,32 @@
+@import "variables";
+@import "typography";
+@import "components/grid/grid";
+
+.loginLayout {
+  @include flex(column, center,center);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url("/assets/images/background/background.jpg");
+  paper-card {
+    padding: 16px;
+    .title {
+      @extend .paper-font-headline;
+      margin: 8px 0 12px 0;
+    }
+    i {
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      font-size: 32px;
+      cursor: pointer;
+      position: relative;
+      paper-ripple {
+        color: $primary-color-500;
+      }
+    }
+  }
+}

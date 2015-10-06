@@ -1,7 +1,7 @@
 <template name="navbar">
 	<div class="middle">
 		<paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
-		{{> loginButtons}}
+		<div>{{{breadcrumb}}}</div>
 		<div class="actions">
 			<i class="mdi mdi-magnify" data-action="toggleSearch">
 				<paper-ripple class="circle" center></paper-ripple>
