@@ -8,7 +8,7 @@ Meteor.startup(function () {
 		var discussion = Forums.insert({
 			name: 'Discussions',
 			icon: 'forum'
-		})
+		});
 
 		subForums.insert({
 			forumId: feedback,
@@ -29,7 +29,7 @@ Meteor.startup(function () {
 			name: 'Google+ Discussions',
 			icon: 'google-plus',
 			description: 'Discussion for the Google Plus'
-		})
+		});
 
 		subForums.insert({
 			forumId: discussion,

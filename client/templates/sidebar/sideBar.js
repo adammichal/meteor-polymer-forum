@@ -17,7 +17,7 @@ Template.sideBar.events({
 			options['forum'] = Forums.findOne({_id: this.forumId}).name.replace(new RegExp(' ', 'g'), '-');
 			options['subForum'] = this.name.replace(new RegExp(' ', 'g'), '-');
 		}
-		console.log(options);
+
 		Router.go(route, options)
 	},
 	'click [data-action="logout"]': function(event) {

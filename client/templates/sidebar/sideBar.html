@@ -35,7 +35,13 @@
 					</paper-menu>
 				</paper-submenu>
 			{{/each}}
-
+			{{#if userCan 'canSeeForumEditPage'}}
+			<paper-item data-route="editForum">
+				<i class="mdi mdi-settings"></i>
+				Edit Forum
+				<paper-ripple></paper-ripple>
+			</paper-item>
+			{{/if}}
 
 			{{#transition in="fadeInDown:500" out="fadeOutUp:500"}}
 			<div class="divider"></div>
